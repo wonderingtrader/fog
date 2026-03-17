@@ -1,0 +1,20 @@
+[@name=pipeline-demo]
+[@pipeline=generate.py,process.js,report.sh]
+
+[generate.py]
+import json
+data = [{"id": i, "value": i * i} for i in range(1, 6)]
+print(json.dumps(data))
+
+[process.js]
+const chunks = [];
+process.stdin.on('data', c => chunks.push(c));
+process.stdin.on('end', () => {
+    const data = JSON.parse(chunks.join(''));
+    const total = data.reduce((s, x) => s + x.value, 0);
+    process.stdout.write(JSON.stringify({ items: data.length, total }));
+});
+
+[report.sh]
+read input
+echo "Pipeline result: $input"

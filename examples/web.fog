@@ -1,0 +1,24 @@
+[@name=web-demo]
+[@entrypoint=index.html]
+
+[index.html]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fog web demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">fog</h1>
+    <p id="message"></p>
+    <script src="app.js"></script>
+</body>
+</html>
+
+[style.css]
+body { font-family: sans-serif; max-width: 600px; margin: 60px auto; text-align: center; }
+h1 { color: #2563eb; font-size: 3em; }
+
+[app.js]
+document.getElementById('message').textContent = 'Multi-language bundles, zero friction.';

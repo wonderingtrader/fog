@@ -1,0 +1,14 @@
+[@name=bridge-demo]
+[@entrypoint=producer.py]
+
+[producer.py]
+import subprocess, os
+fog_export("GREETING", "Hello from Python")
+fog_export("COUNT", "42")
+print("Python: exported GREETING and COUNT to bridge")
+subprocess.run(["node", os.path.join(os.path.dirname(__file__), "consumer.js")])
+
+[consumer.js]
+const greeting = fog.get("GREETING");
+const count = fog.get("COUNT");
+console.log(`JavaScript received: ${greeting}, count=${count}`);

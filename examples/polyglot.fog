@@ -1,0 +1,11 @@
+[@name=polyglot-demo]
+[@parallel]
+
+[hello.py]
+print("Python says: Hello!")
+
+[hello.js]
+console.log("JavaScript says: Hello!")
+
+[hello.sh]
+echo "Shell says: Hello!"

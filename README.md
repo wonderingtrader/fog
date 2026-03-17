@@ -2,16 +2,6 @@
 
 **fog** is a multi-language bundle runner. Pack multiple source files — across any mix of languages — into a single `.fog` file and run them with one command.
 
-## Install
-
-```sh
-git clone https://github.com/fog-lang/fog
-cd fog
-make install       # installs to $GOPATH/bin
-# or
-make build         # builds to ./build/fog
-```
-
 ## Bundle Format
 
 A `.fog` file is plain text with `[filename.ext]` section headers.
